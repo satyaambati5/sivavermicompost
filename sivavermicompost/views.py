@@ -20,9 +20,7 @@ def send(request):
     message = str(request.POST["message"])
     num = str(number)
     if len(num) < 10:
-        return HttpResponse(f"please enter a valid mobile number")
-
-    print(number)
+        return HttpResponse(f"Please Eenter A Valid Mobile Number.")
     res = sm(
         subject=email,
         message=message + "\n CONTACT:" + str(number),
@@ -31,7 +29,7 @@ def send(request):
         fail_silently=False,
     )
 
-    return HttpResponse(f"Email sent to {res} members")
+    return HttpResponse(f"Your Email Was Successfully Received By Our Manager, We Will Contact You Shortly. THANK YOU FOR VISITING Have A Nice Day")
 
     # email_from = email
     # # settings.EMAIL_HOST_USER
